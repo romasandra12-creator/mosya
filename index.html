@@ -211,10 +211,8 @@
 
     <footer class="py-8 text-center text-xs text-gray-600 bg-black">
         <p>© 2026 Створено з любов'ю та гумором для найкращого друга.</p>
-    </footer>
-
-    <script>
-        // Покращена функція для музики
+<script>
+        // Абсолютно нова логіка під інтернет-посилання
         function toggleMusic() {
             const music = document.getElementById('bg-music');
             const btnText = document.getElementById('btn-text');
@@ -227,8 +225,8 @@
                     btnIcon.innerText = "⏸️";
                 })
                 .catch(error => {
-                    console.error("Помилка відтворення:", error);
-                    alert("Браузер блокує звук або файл 'music.mp3' не знайдено на GitHub. Переконайся, що файл лежить у тій самій папці, що й index.html і названий маленькими літерами.");
+                    console.error("Помилка браузера:", error);
+                    alert("Браузер заблокував перший звук. Будь ласка, спочатку просто клацни пальцем/мишкою по тексту чи фону сайту, а потім натисни кнопку знову!");
                 });
             } else {
                 music.pause();
