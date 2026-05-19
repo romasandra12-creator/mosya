@@ -25,21 +25,21 @@
 </head>
 <body class="text-gray-100 overflow-x-hidden">
 
- <audio id="bg-music" src="https://cdn.staticaly.com/gh/romasandra12-creator/mosya/main/birthday.mp3" loop preload="auto"></audio>
+    <audio id="myAudio" src="birthday.mp3" loop="loop"></audio>
 
     <section class="relative min-h-screen flex flex-col items-center justify-center bg-gradient-to-b from-black via-[#141414] to-[#1a120b] px-4 text-center">
         <div class="absolute top-1/4 left-1/4 w-72 h-72 bg-amber-600/10 rounded-full blur-3xl"></div>
         <div class="absolute bottom-1/4 right-1/4 w-80 h-80 bg-red-900/10 rounded-full blur-3xl"></div>
 
         <h1 class="fancy-title text-5xl md:text-7xl font-extrabold text-amber-500 mb-4 neon-text">
-            З Днем Народження, Мося!
+            З Днем Народження, Ваня!
         </h1>
         <p class="text-lg md:text-xl text-gray-400 max-w-xl mb-8 font-light">
             Сайт створено виключно для одного неймовірного чоловіка, його найкращих друзів та найтепліших спогадів.
         </p>
 
-        <button id="music-btn" onclick="toggleMusic()" class="bg-amber-500 hover:bg-amber-600 text-black font-bold py-4 px-8 rounded-full shadow-lg transition-all transform hover:scale-105 flex items-center gap-3 active:scale-95">
-            <span id="btn-icon">🎵</span> <span id="btn-text">Увімкнути атмосферу</span>
+        <button onclick="toggleAudio()" class="bg-amber-500 hover:bg-amber-600 text-black font-bold py-4 px-8 rounded-full shadow-lg transition-all transform hover:scale-105 flex items-center gap-3 active:scale-95">
+            <span>🎵</span> <span id="audioState">Увімкнути атмосферу</span>
         </button>
 
         <div class="absolute bottom-10 animate-bounce text-amber-500/50">
@@ -57,7 +57,7 @@
                     <div class="text-5xl mb-4 group-hover:animate-pulse">❤️</div>
                     <h3 class="text-2xl font-bold text-pink-400 mb-3">Юля</h3>
                     <p class="text-gray-400 text-sm leading-relaxed">
-                        Головне кохання, натхнення і той самий надійний притулок, куди завжди хочеться повертатися після будь-яких пригод.
+                        Головне кохання, натхнення і той самий надійний притулок, куди завжди хочется повертатися після будь-яких пригод.
                     </p>
                 </div>
                 <div class="bg-black/40 p-8 rounded-2xl border border-amber-900/30 hover:border-amber-500/50 transition-all group text-center backdrop-blur-sm">
@@ -84,70 +84,60 @@
             <p class="text-center text-gray-500 mb-12">Тут зібрані кадри, які згадуватимуться з посмішкою через роки</p>
             
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-                
                 <div class="relative overflow-hidden rounded-xl aspect-square bg-neutral-800 group">
                     <img src="photo1.jpg" alt="Фото з Ванею" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 opacity-80 group-hover:opacity-100">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
                         <p class="text-sm font-semibold text-amber-400">Той самий легендарний вечір</p>
                     </div>
                 </div>
-
                 <div class="relative overflow-hidden rounded-xl aspect-square bg-neutral-800 group">
                     <img src="photo2.jpg" alt="Фото з Ванею" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 opacity-80 group-hover:opacity-100">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
                         <p class="text-sm font-semibold text-amber-400">Атмосфера на максимум</p>
                     </div>
                 </div>
-
                 <div class="relative overflow-hidden rounded-xl aspect-square bg-neutral-800 group">
                     <img src="photo3.jpg" alt="Фото з Ванею" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 opacity-80 group-hover:opacity-100">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
                         <p class="text-sm font-semibold text-amber-400">Коли пиво було напрочуд смачним</p>
                     </div>
                 </div>
-
                 <div class="relative overflow-hidden rounded-xl aspect-square bg-neutral-800 group">
                     <img src="photo4.jpg" alt="Фото з Ванею" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 opacity-80 group-hover:opacity-100">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
                         <p class="text-sm font-semibold text-amber-400">Епічний момент</p>
                     </div>
                 </div>
-
                 <div class="relative overflow-hidden rounded-xl aspect-square bg-neutral-800 group">
                     <img src="photo5.jpg" alt="Фото з Ванею" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 opacity-80 group-hover:opacity-100">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
                         <p class="text-sm font-semibold text-amber-400">Тут Ваня просто найкращий</p>
                     </div>
                 </div>
-
                 <div class="relative overflow-hidden rounded-xl aspect-square bg-neutral-800 group">
                     <img src="photo6.jpg" alt="Фото з Ванею" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 opacity-80 group-hover:opacity-100">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
                         <p class="text-sm font-semibold text-amber-400">Ще один крутий спогад</p>
                     </div>
                 </div>
-
                 <div class="relative overflow-hidden rounded-xl aspect-square bg-neutral-800 group">
                     <img src="photo7.jpg" alt="Фото з Ванею" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 opacity-80 group-hover:opacity-100">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
                         <p class="text-sm font-semibold text-amber-400">Живі емоції</p>
                     </div>
                 </div>
-
                 <div class="relative overflow-hidden rounded-xl aspect-square bg-neutral-800 group">
                     <img src="photo8.jpg" alt="Фото з Ванею" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 opacity-80 group-hover:opacity-100">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
                         <p class="text-sm font-semibold text-amber-400">Легендарний кадр</p>
                     </div>
                 </div>
-
                 <div class="relative overflow-hidden rounded-xl aspect-square bg-neutral-800 group">
                     <img src="photo9.jpg" alt="Фото з Ванею" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 opacity-80 group-hover:opacity-100">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
                         <p class="text-sm font-semibold text-amber-400">Фінальний акорд історії</p>
                     </div>
                 </div>
-
             </div>
         </div>
     </section>
@@ -182,7 +172,7 @@
                 <div id="secret-content" class="hidden mt-8 bg-[#161616] border border-amber-500/30 rounded-2xl p-8 max-w-xl mx-auto shadow-2xl text-left transform transition-all duration-700 opacity-0 translate-y-4">
                     <h3 class="text-xl font-bold text-amber-400 mb-4">✨ Наше головне побажання:</h3>
                     <p class="text-gray-300 leading-relaxed text-sm">
-                        Ваня, ми неймовірно раді, що ти є в нашому житті! Ти людина з великим серцем, яскравим характером і чудовим почуттям гумору. Бажаємо, щоб ваше кохання з Юлею міцнішало з кожним днем, бокали ніколи не були порожніми, а в житии все відбувалося виключно за твоїми правилами та твоїм сценарієм! Нехай кожен день приносить кайф, драйв та вірних людей поруч. Зі святом, бро!
+                        Ваня, ми неймовірно раді, що ти є в нашому житті! Ти людина з великим серцем, яскравим характером і чудовим почуттям гумору. Бажаємо, щоб ваше кохання з Юлею міцнішало з кожним днем, бокали ніколи не були порожніми, а в житті все відбувалося виключно за твоїми правилами та твоїм сценарієм! Нехай кожен день приносить кайф, драйв та вірних людей поруч. Зі святом, бро!
                     </p>
                 </div>
             </div>
@@ -213,24 +203,21 @@
         <p>© 2026 Створено з любов'ю та гумором для найкращого друга.</p>
     </footer>
 
-    <script>
-        function toggleMusic() {
-            const music = document.getElementById('bg-music');
-            const btnText = document.getElementById('btn-text');
-            const btnIcon = document.getElementById('btn-icon');
+    <script type="text/javascript">
+        var myAudio = document.getElementById("myAudio");
+        var audioState = document.getElementById("audioState");
 
-            if (music.paused) {
-                music.play();
-                btnText.innerText = "Атмосфера увімкнена";
-                btnIcon.innerText = "⏸️";
+        function toggleAudio() {
+            if (myAudio.paused) {
+                myAudio.play();
+                audioState.innerHTML = "Атмосфера увімкнена";
             } else {
-                music.pause();
-                btnText.innerText = "Увімкнути атмосферу";
-                btnIcon.innerText = "🎵";
+                myAudio.pause();
+                audioState.innerHTML = "Увімкнути атмосферу";
             }
         }
 
-        // Квіз
+        // КВІЗ
         const quizData = [
             {
                 question: "Що ідеально доповнює вечір п'ятниці для Вані?",
@@ -286,7 +273,7 @@
 
         loadQuiz();
 
-        // Секретне побажання
+        // СЕКРЕТНЕ ПОБАЖАННЯ
         function openSecret() {
             const content = document.getElementById('secret-content');
             const trigger = document.getElementById('beer-trigger');
