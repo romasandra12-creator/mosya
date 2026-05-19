@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>З Днем Народження, Ваня!</title>
+    <title>З Днем Народження, ІВаня!</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&family=Comfortaa:wght@700&display=swap" rel="stylesheet">
     <style>
@@ -25,6 +25,8 @@
 </head>
 <body class="text-gray-100 overflow-x-hidden">
 
+    <audio id="bg-music" src="https://ukrmuzon.com/uploads/music/2023-11/alyona-omargalieva-fanat.mp3" loop preload="auto"></audio>
+
     <section class="relative min-h-screen flex flex-col items-center justify-center bg-gradient-to-b from-black via-[#141414] to-[#1a120b] px-4 text-center">
         <div class="absolute top-1/4 left-1/4 w-72 h-72 bg-amber-600/10 rounded-full blur-3xl"></div>
         <div class="absolute bottom-1/4 right-1/4 w-80 h-80 bg-red-900/10 rounded-full blur-3xl"></div>
@@ -36,15 +38,11 @@
             Сайт створено виключно для одного неймовірного чоловіка, його найкращих друзів та найтепліших спогадів.
         </p>
 
-        <div class="w-full max-w-md bg-black/60 p-4 rounded-3xl border border-amber-500/30 backdrop-blur-md shadow-2xl mb-8">
-            <p class="text-xs uppercase tracking-widest text-amber-400 mb-3 font-semibold">🎵 Музична атмосфера сторінки</p>
-            <div class="relative pt-[56.25%] rounded-2xl overflow-hidden shadow-inner">
-                <iframe class="absolute top-0 left-0 w-full h-full" src="https://www.youtube.com/embed/SOf-h_o_Nn8" title="Альона Омаргалієва - Фанат" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-            </div>
-            <p class="text-xs text-gray-500 mt-2">Натисни кнопку "Play" на плеєрі вище, щоб увімкнути трек</p>
-        </div>
+        <button id="music-btn" onclick="toggleMusic()" class="bg-amber-500 hover:bg-amber-600 text-black font-bold py-4 px-8 rounded-full shadow-lg transition-all transform hover:scale-105 flex items-center gap-3 active:scale-95">
+            <span id="btn-icon">🎵</span> <span id="btn-text">Увімкнути атмосферу</span>
+        </button>
 
-        <div class="absolute bottom-6 animate-bounce text-amber-500/50">
+        <div class="absolute bottom-10 animate-bounce text-amber-500/50">
             <p class="text-xs uppercase tracking-widest mb-1">Гортай вниз</p>
             <span class="text-2xl">↓</span>
         </div>
@@ -184,7 +182,7 @@
                 <div id="secret-content" class="hidden mt-8 bg-[#161616] border border-amber-500/30 rounded-2xl p-8 max-w-xl mx-auto shadow-2xl text-left transform transition-all duration-700 opacity-0 translate-y-4">
                     <h3 class="text-xl font-bold text-amber-400 mb-4">✨ Наше головне побажання:</h3>
                     <p class="text-gray-300 leading-relaxed text-sm">
-                        Ваня, ми неймовірно раді, що ти є в нашому житті! Ти людина з великим серцем, яскравим характером і чудовим почуттям гумору. Бажаємо, щоб ваше кохання з Юлею міцнішало з кожним днем, бокали ніколи не були порожніми, а в житті все відбувалося виключно за твоїми правилами та твоїм сценарієм! Нехай кожен день приносить кайф, драйв та вірних людей поруч. Зі святом, бро!
+                        Ваня, ми неймовірно раді, що ти є в нашому житті! Ти людина з великим серцем, яскравим характером і чудовим почуттям гумору. Бажаємо, щоб ваше кохання з Юлею міцнішало з кожним днем, бокали ніколи не були порожніми, а в житии все відбувалося виключно за твоїми правилами та твоїм сценарієм! Нехай кожен день приносить кайф, драйв та вірних людей поруч. Зі святом, бро!
                     </p>
                 </div>
             </div>
@@ -216,6 +214,22 @@
     </footer>
 
     <script>
+        function toggleMusic() {
+            const music = document.getElementById('bg-music');
+            const btnText = document.getElementById('btn-text');
+            const btnIcon = document.getElementById('btn-icon');
+
+            if (music.paused) {
+                music.play();
+                btnText.innerText = "Атмосфера увімкнена";
+                btnIcon.innerText = "⏸️";
+            } else {
+                music.pause();
+                btnText.innerText = "Увімкнути атмосферу";
+                btnIcon.innerText = "🎵";
+            }
+        }
+
         // Квіз
         const quizData = [
             {
