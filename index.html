@@ -25,7 +25,7 @@
 </head>
 <body class="text-gray-100 overflow-x-hidden">
 
-    <audio id="bg-music" src="https://cdn.jsdelivr.net/gh/romasandra12-creator/mosya@main/birthday.mp3" loop></audio>
+   <audio id="bg-music" src="birthday.mp3" loop></audio>
 
     <section class="relative min-h-screen flex flex-col items-center justify-center bg-gradient-to-b from-black via-[#141414] to-[#1a120b] px-4 text-center">
         <div class="absolute top-1/4 left-1/4 w-72 h-72 bg-amber-600/10 rounded-full blur-3xl"></div>
@@ -213,21 +213,17 @@
         <p>© 2026 Створено з любов'ю та гумором для найкращого друга.</p>
 <script>
         // Абсолютно нова логіка під інтернет-посилання
+       // Максимально спрощена логіка для мобільних телефонів та Instagram-браузерів
         function toggleMusic() {
             const music = document.getElementById('bg-music');
             const btnText = document.getElementById('btn-text');
             const btnIcon = document.getElementById('btn-icon');
 
             if (music.paused) {
-                music.play()
-                .then(() => {
-                    btnText.innerText = "Атмосфера увімкнена";
-                    btnIcon.innerText = "⏸️";
-                })
-                .catch(error => {
-                    console.error("Помилка браузера:", error);
-                    alert("Браузер заблокував перший звук. Будь ласка, спочатку просто клацни пальцем/мишкою по тексту чи фону сайту, а потім натисни кнопку знову!");
-                });
+                // Прямий запуск без обіцянок (promises), який дозволений усім браузерам при кліку
+                music.play();
+                btnText.innerText = "Атмосфера увімкнена";
+                btnIcon.innerText = "⏸️";
             } else {
                 music.pause();
                 btnText.innerText = "Увімкнути атмосферу";
