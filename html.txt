@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="uk" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>З Днем Народження, Ваня!</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts для гарного шрифту -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&family=Comfortaa:wght@700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #0d0d0d;
+        }
+        .fancy-title {
+            font-family: 'Comfortaa', cursive;
+        }
+        /* Анімація для пульсації неону */
+        @keyframes neonGlow {
+            0%, 100% { text-shadow: 0 0 10px #f59e0b, 0 0 20px #f59e0b, 0 0 30px #d97706; }
+            50% { text-shadow: 0 0 15px #f59e0b, 0 0 30px #f59e0b, 0 0 45px #d97706; }
+        }
+        .neon-text {
+            animation: neonGlow 2s infinite ease-in-out;
+        }
+    </style>
+</head>
+<body class="text-gray-100 overflow-x-hidden">
+
+    <!-- Аудіоелемент (Встав сюди шлях до треку) -->
+    <audio id="bg-music" src="birthday.mp3" loop></audio>
+
+    <!-- 1. ГОЛОВНИЙ ЕКРАН (Hero Section) -->
+    <section class="relative min-h-screen flex flex-col items-center justify-center bg-gradient-to-b from-black via-[#141414] to-[#1a120b] px-4 text-center">
+        <!-- Декоративні розмиті кола на фоні -->
+        <div class="absolute top-1/4 left-1/4 w-72 h-72 bg-amber-600/10 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-1/4 right-1/4 w-80 h-80 bg-red-900/10 rounded-full blur-3xl"></div>
+
+        <h1 class="fancy-title text-5xl md:text-7xl font-extrabold text-amber-500 mb-4 neon-text">
+            З Днем Народження, Ваня!
+        </h1>
+        <p class="text-lg md:text-xl text-gray-400 max-w-xl mb-8 font-light">
+            Сайт створено виключно для одного неймовірного чоловіка, від його найкращих друзів.
+        </p>
+
+        <!-- Кнопка запуску атмосфери -->
+        <button id="music-btn" onclick="toggleMusic()" class="bg-amber-500 hover:bg-amber-600 text-black font-bold py-4 px-8 rounded-full shadow-lg transition-all transform hover:scale-105 flex items-center gap-3 active:scale-95">
+            <span id="btn-icon">🎵</span> <span id="btn-text">Увімкнути атмосферу</span>
+        </button>
+
+        <div class="absolute bottom-10 animate-bounce text-amber-500/50">
+            <p class="text-xs uppercase tracking-widest mb-1">Гортай вниз</p>
+            <span class="text-2xl">↓</span>
+        </div>
+    </section>
+
+    <!-- 2. БЛОК ЦІННОСТЕЙ (Юля, Пиво, БДСМ) -->
+    <section class="py-24 px-4 bg-[#1a120b]">
+        <div class="max-w-5xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 fancy-title">Три кити, на яких тримається всесвіт Вані</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Картка 1: Юля -->
+                <div class="bg-black/40 p-8 rounded-2xl border border-pink-900/30 hover:border-pink-500/50 transition-all group text-center backdrop-blur-sm">
+                    <div class="text-5xl mb-4 group-hover:animate-pulse">❤️</div>
+                    <h3 class="text-2xl font-bold text-pink-400 mb-3">Юля</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Головне кохання, натхнення і той самий надійний притулок, куди завжди хочеться повертатися після будь-яких пригод.
+                    </p>
+                </div>
+
+                <!-- Картка 2: Пиво -->
+                <div class="bg-black/40 p-8 rounded-2xl border border-amber-900/30 hover:border-amber-500/50 transition-all group text-center backdrop-blur-sm">
+                    <div class="text-5xl mb-4 group-hover:rotate-12 transition-transform">🍺</div>
+                    <h3 class="text-2xl font-bold text-amber-400 mb-3">Холодне Пінне</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Культура, філософія та найкращий спосіб розслабитися у колі друзів. Завжди правильний вибір для хорошого вечора.
+                    </p>
+                </div>
+
+                <!-- Картка 3: БДСМ -->
+                <div class="bg-black/40 p-8 rounded-2xl border border-red-950/30 hover:border-red-600/50 transition-all group text-center backdrop-blur-sm">
+                    <div class="text-5xl mb-4 group-hover:scale-110 transition-transform">⛓️</div>
+                    <h3 class="text-2xl font-bold text-red-500 mb-3">Естетика та Контроль</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Тут без зайвих слів. Пікантна перчинка характеру, яка робить Ванечку справжнім майстром витонченого відпочинку та емоцій.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. ГАЛЕРЕЯ СПІЛЬНИХ ФОТО -->
+    <section class="py-24 px-4 bg-[#121212]">
+        <div class="max-w-5xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 fancy-title">Хроніки найкращих моментів</h2>
+            <p class="text-center text-gray-500 mb-12">Тут зібрані кадри, які згадуватимуться з посмішкою через роки</p>
+            
+            <!-- Сітка фотографій (тепер тут 7 блоків) -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+                
+                <!-- Фото 1 -->
+                <div class="relative overflow-hidden rounded-xl aspect-square bg-neutral-800 group">
+                    <img src="photo1.jpg" alt="Фото з Ванею" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 opacity-80 group-hover:opacity-100">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
+                        <p class="text-sm font-semibold text-amber-400">Той самий легендарний вечір</p>
+                    </div>
+                </div>
+
+                <!-- Фото 2 -->
+                <div class="relative overflow-hidden rounded-xl aspect-square bg-neutral-800 group">
+                    <img src="photo2.jpg" alt="Фото з Ванею" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 opacity-80 group-hover:opacity-100">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
+                        <p class="text-sm font-semibold text-amber-400">Атмосфера на максимум</p>
+                    </div>
+                </div>
+
+                <!-- Фото 3 -->
+                <div class="relative overflow-hidden rounded-xl aspect-square bg-neutral-800 group">
+                    <img src="photo3.jpg" alt="Фото з Ванею" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 opacity-80 group-hover:opacity-100">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
+                        <p class="text-sm font-semibold text-amber-400">Коли пиво було напрочуд смачним</p>
+                    </div>
+                </div>
+
+                <!-- Фото 4 -->
+                <div class="relative overflow-hidden rounded-xl aspect-square bg-neutral-800 group">
+                    <img src="photo4.jpg" alt="Фото з Ванею" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 opacity-80 group-hover:opacity-100">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
+                        <p class="text-sm font-semibold text-amber-400">Епічний момент</p>
+                    </div>
+                </div>
+
+                <!-- Фото 5 -->
+                <div class="relative overflow-hidden rounded-xl aspect-square bg-neutral-800 group">
+                    <img src="photo5.jpg" alt="Фото з Ванею" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 opacity-80 group-hover:opacity-100">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
+                        <p class="text-sm font-semibold text-amber-400">Тут Ваня просто найкращий</p>
+                    </div>
+                </div>
+
+                <!-- Фото 6 -->
+                <div class="relative overflow-hidden rounded-xl aspect-square bg-neutral-800 group">
+                    <img src="photo6.jpg" alt="Фото з Ванею" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 opacity-80 group-hover:opacity-100">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
+                        <p class="text-sm font-semibold text-amber-400">Ще один крутий спогад</p>
+                    </div>
+                </div>
+
+                <!-- Фото 7 -->
+                <div class="relative overflow-hidden rounded-xl aspect-square bg-neutral-800 group">
+                    <img src="photo7.jpg" alt="Фото з Ванею" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 opacity-80 group-hover:opacity-100">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
+                        <p class="text-sm font-semibold text-amber-400">Фінальний акорд історії</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. ІНТЕРАКТИВНА ВІКТОРИНА -->
+    <section class="py-24 px-4 bg-[#1a120b]">
+        <div class="max-w-2xl mx-auto bg-black/50 p-8 md:p-12 rounded-3xl border border-amber-500/20 shadow-2xl">
+            <h2 class="text-3xl font-bold text-center mb-8 fancy-title text-amber-400">Вікторина: Тест на Ванезнавство</h2>
+            
+            <div id="quiz-container">
+                <!-- Питання мінятимуться через JS -->
+                <div id="question-block">
+                    <p id="quiz-question" class="text-xl font-medium mb-6 text-center">Завантаження питання...</p>
+                    <div id="quiz-options" class="space-y-3">
+                        <!-- Варіанти відповідей -->
+                    </div>
+                </div>
+                <div id="quiz-result" class="hidden text-center space-y-4">
+                    <p class="text-2xl font-bold text-green-400">Тест пройдено! 🎉</p>
+                    <p id="quiz-feedback" class="text-gray-300"></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. ПРИХОВАНЕ ПОБАЖАННЯ -->
+    <section class="py-24 px-4 bg-gradient-to-b from-[#121212] to-black text-center relative">
+        <div class="max-w-3xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6 fancy-title">Секретний бокс для іменинника</h2>
+            <p class="text-gray-400 mb-8 max-w-md mx-auto text-sm">Тут сховане найголовніше та найвідвертіше привітання. Але щоб його відкрити, доведеться зробити один клік по баночці.</p>
+            
+            <div id="secret-zone" class="py-8">
+                <!-- Кнопка-баночка -->
+                <button id="beer-trigger" onclick="openSecret()" class="text-6xl filter drop-shadow-[0_0_15px_rgba(245,158,11,0.4)] hover:scale-110 active:scale-95 transition-transform focus:outline-none animate-pulse">
+                    🍺
+                </button>
+                <p id="trigger-label" class="text-xs uppercase text-amber-500 mt-4 tracking-widest">Натисни, щоб відкоркувати</p>
+                
+                <!-- Прихований текст побажання (спочатку схований через CSS за допомогою класу hidden) -->
+                <div id="secret-content" class="hidden mt-8 bg-[#161616] border border-amber-500/30 rounded-2xl p-8 max-w-xl mx-auto shadow-2xl text-left transform transition-all duration-700 opacity-0 translate-y-4">
+                    <h3 class="text-xl font-bold text-amber-400 mb-4 flex items-center gap-2">✨ Наше головне побажання:</h3>
+                    <p class="text-gray-300 leading-relaxed text-sm space-y-2">
+                        Ваня, ми неймовірно раді, що ти є в нашому житті! Ти людина з великим серцем, яскравим характером і чудовим почуттям гумору. Бажаємо, щоб ваше кохання з Юлею міцнішало з кожним днем, бокали ніколи не були порожніми, а в житті все відбувалося виключно за твоїми правилами та твоїм сценарієм! Нехай кожен день приносить кайф, драйв та вірних людей поруч. Зі святом, бро!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. СТІНА ПОБАЖАНЬ (Лампові стікери) -->
+    <section class="py-24 px-4 bg-[#0f0f0f] border-t border-neutral-900">
+        <div class="max-w-5xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 fancy-title">Теплі слова від банди</h2>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                <!-- Стікер 1 -->
+                <div class="bg-amber-500/10 border-l-4 border-amber-500 p-6 rounded-r-xl shadow-lg">
+                    <p class="text-gray-300 italic mb-4 text-sm">"Ванюха, залишайся завжди таким же позитивним і надійним другом. Нехай пиво ллється рікою, а Юля завжди посміхається поруч!"</p>
+                    <p class="text-right text-xs font-semibold text-amber-400">— Твій найкращий кент</p>
+                </div>
+                <!-- Стікер 2 -->
+                <div class="bg-red-500/10 border-l-4 border-red-500 p-6 rounded-r-xl shadow-lg">
+                    <p class="text-gray-300 italic mb-4 text-sm">"З днем народження! Бажаю залізного здоров'я, сталевих нервів та щоб батоги і наручники використовувалися лише за прямим приємним призначенням! 😉"</p>
+                    <p class="text-right text-xs font-semibold text-red-400">— Куми</p>
+                </div>
+                <!-- Стікер 3 -->
+                <div class="bg-amber-500/10 border-l-4 border-amber-500 p-6 rounded-r-xl shadow-lg">
+                    <p class="text-gray-300 italic mb-4 text-sm">"Ваню, з чистим серцем бажаю тобі грандіозних успіхів. Ти топ, майбутнє світле, святкуй на повну!"</p>
+                    <p class="text-right text-xs font-semibold text-amber-400">— Компанія з гаражів</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ПІДВАЛ (Footer) -->
+    <footer class="py-8 text-center text-xs text-gray-600 bg-black">
+        <p>© 2026 Створено з любов'ю та гумором для найкращого друга.</p>
+    </footer>
+
+    <!-- СКРИПТИ ДЛЯ ІНТЕРАКТИВУ -->
+    <script>
+        // 1. Функція для музики
+        function toggleMusic() {
+            const music = document.getElementById('bg-music');
+            const btnText = document.getElementById('btn-text');
+            const btnIcon = document.getElementById('btn-icon');
+
+            if (music.paused) {
+                music.play().catch(e => console.log("Музика заблокована браузером, потрібен клік"));
+                btnText.innerText = "Атмосфера увімкнена";
+                btnIcon.innerText = "⏸️";
+            } else {
+                music.pause();
+                btnText.innerText = "Увімкнути атмосферу";
+                btnIcon.innerText = "🎵";
+            }
+        }
+
+        // 2. Дані для Вікторини
+        const quizData = [
+            {
+                question: "Що ідеально доповнює вечір п'ятниці для Вані?",
+                options: ["Просто поспати", "Юля, бокал прохолодного пива і гарний настрій", "Перегляд новин"],
+                correct: 1
+            },
+            {
+                question: "Який матеріал Ваня вважає найбільш... стильним?",
+                options: ["Шовк", "Джинс", "Шкіра та латекс 🔥"],
+                correct: 2
+            },
+            {
+                question: "Найкращий напій усіх часів за версією іменинника?",
+                options: ["Якісне нефільтроване", "Капучино на кокосовому", "Мінералочка"],
+                correct: 0
+            }
+        ];
+
+        let currentQuestion = 0;
+
+        function loadQuiz() {
+            const qBlock = document.getElementById('question-block');
+            const qQuestion = document.getElementById('quiz-question');
+            const qOptions = document.getElementById('quiz-options');
+
+            if (currentQuestion < quizData.length) {
+                const current = quizData[currentQuestion];
+                qQuestion.innerText = current.question;
+                qOptions.innerHTML = "";
+
+                current.options.forEach((opt, index) => {
+                    const btn = document.createElement('button');
+                    btn.innerText = opt;
+                    btn.className = "w-full text-left bg-neutral-800 hover:bg-amber-500/20 p-4 rounded-xl text-sm border border-neutral-700 transition-colors text-gray-200";
+                    btn.onclick = () => checkAnswer(index);
+                    qOptions.appendChild(btn);
+                });
+            } else {
+                document.getElementById('question-block').classList.add('hidden');
+                const resultBlock = document.getElementById('quiz-result');
+                resultBlock.classList.remove('hidden');
+                document.getElementById('quiz-feedback').innerText = "Ти знаєш Ваню на всі 100%! Тепер ти офіційно допущений до святкування!";
+            }
+        }
+
+        function checkAnswer(selected) {
+            if (selected === quizData[currentQuestion].correct) {
+                alert("Правильно! 🎉");
+                currentQuestion++;
+                loadQuiz();
+            } else {
+                alert("Хмм, спробуй ще раз! Ваня б такого не вибрав 😜");
+            }
+        }
+
+        // Ініціалізація квізу при завантаженні
+        loadQuiz();
+
+        // 3. Функція для відкриття секретного побажання
+        function openSecret() {
+            const content = document.getElementById('secret-content');
+            const trigger = document.getElementById('beer-trigger');
+            const label = document.getElementById('trigger-label');
+
+            // Зміна іконки на відкрите пиво
+            trigger.innerText = "🍻";
+            trigger.classList.remove('animate-pulse');
+            label.innerText = "Відкорковано!";
+
+            // Поява блоку з текстом
+            content.classList.remove('hidden');
+            setTimeout(() => {
+                content.classList.remove('opacity-0', 'translate-y-4');
+                content.classList.add('opacity-100', 'translate-y-0');
+            }, 50);
+        }
+    </script>
+</body>
+</html>
