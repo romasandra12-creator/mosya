@@ -213,28 +213,16 @@
     <footer class="py-8 text-center text-xs text-gray-600 bg-black">
         <p>© 2026 Створено з любов'ю та гумором для найкращого друга.</p>
 <script>
-      // Нова логіка кнопки, яка запускає звук з YouTube без блокувань
-        var player;
-        
-        // Підключаємо офіційне керування YouTube
-        function onYouTubeIframeAPIReady() {
-            player = new YT.Player('yt-audio');
-        }
-
-        // Завантажуємо скрипт YouTube в пам'ять сайту
-        var tag = document.createElement('script');
-        tag.src = "https://www.youtube.com/iframe_api";
-        var firstScriptTag = document.getElementsByTagName('script')[0];
-        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
-        let isPlaying = false;
-
-        function toggleMusic() {
+      function toggleMusic() {
             const btnText = document.getElementById('btn-text');
             const btnIcon = document.getElementById('btn-icon');
 
             if (!isPlaying) {
                 if (player && typeof player.playVideo === 'function') {
+                    // Цей рядок примусово вмикає звук на повну, якщо браузер його приглушив
+                    player.unMute(); 
+                    player.setVolume(100);
+                    
                     player.playVideo();
                     isPlaying = true;
                     btnText.innerText = "Атмосфера увімкнена";
